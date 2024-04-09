@@ -1,0 +1,39 @@
+Prerequisites:
+•  Learn as much as possible about container technologies such as OCI,
+Podman, and Docker.
+
+Description:
+•  Install Podman.
+
+•  Use a Dockerfile to install the necessary tools for compiling the C++
+"Hello, World!" program.
+
+•  Create a Debian 12 ("debian12") rootless container image from a
+Dockerfile using the command: "podman build -t debian12 -f
+Dockerfile-debian12".
+
+•  Compile and run the C++ "Hello, World!" program inside the "debian12"
+container using Podman.
+
+•  Find a method to run the OpenSSH server (sshd) inside the container.
+
+•  Optionally, run the OpenSSH server (sshd) in the container in debug
+mode (e.g., `/usr/sbin/sshd -d -p 2222`).
+
+
+Proof of successful task completion:
+1. Document all commands used and files modified.
+
+2. Connect from your Linux host to the SSH server running in the container.
+
+3. Optionally, use the debug mode for the SSH client and analyze the
+console output.
+
+
+Deliverables:
+Provide the following files for download from GitHub:
+
+•  "task3-hello.txt" and "Dockerfile-debian12" (for item 1).
+
+•  "task3-ssh.txt" (for item 2).
+

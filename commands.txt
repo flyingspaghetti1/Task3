@@ -1,0 +1,15 @@
+sudo apt-get -y install podman - installs podman
+
+cd WORKDIR - moves to the directory in which the dockerfile and c++ code file are
+
+podman build -t debian12 -f Dockerfile-debian12 - builds the rootless container image from the dockerfile "Dockerfile-debian12"
+
+podman run debian12 - runs the container "debian12"
+
+podman run -d -p 2222:22 --name new_ssh5 debian12 - starts the container and maps the port 22 (SSH port inside the container) to port 2226 on the host
+
+ssh user@localhost -p 2226 - connects to the SSH server running inside the container using an SSH client from the local host
+
+cd /workspace - moves to the directory in the container
+
+./hello_world - runs the c++ code in the container

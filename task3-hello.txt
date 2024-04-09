@@ -1,0 +1,9 @@
+The main.cpp file that has the "Hello world!" c++ code:
+#include <iostream>
+
+int main() {
+    std::cout << "Hello, World!" << std::endl;
+    return 0;
+}
+
+

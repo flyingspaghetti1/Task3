@@ -1,0 +1,25 @@
+# Use a base image
+FROM ubuntu:latest
+
+# Install SSH server and other dependencies
+RUN apt-get update && \
+    apt-get install -y openssh-server gcc g++ make && \
+    mkdir /var/run/sshd
+
+# Create a new user 'user' with password 'password' for SSH login
+RUN useradd -ms /bin/bash user && echo 'user:password' | chpasswd
+
+# Working directory
+WORKDIR /workspace
+
+# Copy source code file into the container
+COPY main.cpp 
+
+# Compile the source code
+RUN g++ -o hello_world main.cpp
+
+# Expose SSH port
+EXPOSE 22
+
+# Start SSH server and run your program
+CMD ["/usr/sbin/sshd", "-D"]
